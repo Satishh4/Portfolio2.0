@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio 2.0</title>
+    <style>
+      body {
+        margin: 0;
+        color: #000000;
+        font-family: monospace;
+        background-color: #ffaa00;
+        background-image: url(./liquid-cheese.svg);
+        background-attachment: fixed;
+        background-size: cover;
+        /* user-select: none; */
+        /* add user select at full compeletion */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* navbar begin */
+      * {
+        box-sizing: border-box;
+      }
+
+      .nav {
+        height: 60px;
+        width: 100%;
+        background-color: #fff200;
+        position: relative;
+        border-bottom: 5px solid black;
+        padding-right: 260px;
+        padding-left: 260px;
+      }
+
+      .nav > .nav-header {
+        display: inline;
+        color: #000;
+      }
+
+      .nav-title::before {
+        content: "";
+        animation: animate infinite 3s;
+        padding-left: 10px;
+        color: #000;
+      }
+
+      @keyframes animate {
+        0% {
+          content: "𝙎𝘼𝙏𝙄𝙎𝙃 𝙆𝙐𝙈𝘼𝙍";
+        }
+
+        50% {
+          content: "ಸತೀಶ ಕುಮಾರ ";
+        }
+
+        100% {
+          content: "सतीश कुमार ";
+        }
+      }
+
+      .nav > .nav-header > .nav-title {
+        display: inline-block;
+        font-size: 22px;
+        color: #000;
+        padding: 10px 10px 10px 10px;
+      }
+
+      .nav > .nav-btn {
+        display: none;
+      }
+
+      .nav > .nav-links {
+        display: inline;
+        float: right;
+        font-size: 18px;
+      }
+
+      .nav > .nav-links > a {
+        display: inline-block;
+        padding: 13px 10px 13px 10px;
+        text-decoration: none;
+        color: #000;
+      }
+
+      .nav > .nav-links > a:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 600px) {
+        .nav > .nav-btn {
+          display: inline-block;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+        }
+        .nav > .nav-btn > label {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          padding: 13px;
+        }
+
+        .nav > .nav-btn > label > span {
+          display: block;
+          width: 25px;
+          height: 10px;
+          border-top: 2px solid #eee;
+        }
+        .nav > .nav-links {
+          position: absolute;
+          display: block;
+          width: 100%;
+          background-color: #333;
+          height: 0px;
+          transition: all 0.3s ease-in;
+          overflow-y: hidden;
+          top: 50px;
+          left: 0px;
+        }
+        .nav > .nav-links > a {
+          display: block;
+          width: 100%;
+        }
+      }
+      /* navbar end */
+
+
+      /* resume button */
+      .file-btn{
+        padding: 19px 67px;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 5px;
+        background: white;
+        border: 1px solid black;
+        box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+      }
+
+      /* 3d cube begin */
+ 
+    .spinner-1 {
+   width: 400px;
+   height: 400px;
+   animation: spinner 12s infinite ease;
+   transform-style: preserve-3d;
+}
+
+.spinner-1 > div {
+   background-color: rgba(0,0,0,0.2);
+   height: 100%;
+   position: absolute;
+   width: 100%;
+   border: 2px solid #000000;
+}
+
+.spinner-1 div:nth-of-type(1) {
+   transform: translateZ(-202px) rotateY(180deg);
+   background: #ff00004a;
+   background-image: url(./giphy.gif);
+   border: 2px solid rgb(0, 0, 0);
+}
+
+
+.spinner-1 div:nth-of-type(2) {
+   transform: rotateY(-270deg) translateX(50%);
+   transform-origin: top right;
+   background: #ff00004a;
+   background-image: url(./giphy.gif);
+   border: 2px solid rgb(0, 0, 0);
+}
+
+.spinner-1 div:nth-of-type(3) {
+   transform: rotateY(270deg) translateX(-50%);
+   transform-origin: center left;
+   background: #ff00004a;
+   background-image: url(./giphy.gif);
+   border: 2px solid rgb(0, 0, 0);
+}
+
+.spinner-1 div:nth-of-type(4) {
+   transform: rotateX(90deg) translateY(-50%);
+   transform-origin: top center;
+   background: #ff00004a;
+   background-image: url(./giphy.gif);
+   border: 2px solid rgb(0, 0, 0);
+}
+
+.spinner-1 div:nth-of-type(5) {
+   transform: rotateX(-90deg) translateY(50%);
+   transform-origin: bottom center;
+   background: #ff00004a;
+   background-image: url(./giphy.gif);
+   border: 2px solid rgb(0, 0, 0);
+}
+
+.spinner-1 div:nth-of-type(6) {
+   transform: translateZ(202px);
+   background: #ff00004a;
+   background-image: url(./giphy.gif);
+   border: 2px solid rgb(0, 0, 0);
+}
+
+@keyframes spinner {
+   0% {
+      transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+   }
+
+   50% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+   }
+
+   100% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+   }
+}
+
+      /* 3d cube end */
+
+      #intro {
+        width: 100%;
+        height: 100vh;
+      }
+
+      .txt-big {
+        font-family: ARIAL;
+        box-shadow: 2px 2px;
+        text-shadow: 4px 2px 0px #ffffff;
+        margin-bottom: 0%;
+        padding-top: 350px;
+        margin-top: 0%;
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 5px;
+        z-index: 1;
+        margin-left: 30px;
+      }
+
+      .txt-medium {
+        font-family: ARIAL;
+        font-size: 3.5em;
+        color: #ff0000;
+        /* shadow for font */
+        text-shadow: 3px -1px 0px #000000;
+        opacity: 40;
+        margin: 0%;
+        margin-left: 30px;
+      }
+
+      #txt-small {
+        margin-left: 30px;
+        letter-spacing: 0.015rem;
+        font-family: system-ui;
+      }
+
+      p.test2 {
+        writing-mode: vertical-rl;
+        font-weight: bolder;
+        font-size: xx-large;
+        box-shadow: 2px 2px;
+        padding-top: 100px;
+      }
+
+      span.test2 {
+        writing-mode: vertical-rl;
+      }
+
+      .sticky {
+        top: 535px;
+        float: right;
+        margin-right: 20px;
+        writing-mode: vertical-rl;
+        font-weight: bolder;
+        font-size: xx-large;
+        writing-mode: vertical-rl;
+        position: sticky;
+        text-shadow: -1px 0px 10px white;
+        position: -webkit-sticky;
+      }
+
+      .sticky-2 {
+        float: left;
+        margin: 20px;
+        writing-mode: vertical-rl;
+        font-weight: bolder;
+        font-size: xx-large;
+      }
+
+      .shape-1 {
+        display: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 55px;
+        padding: 0;
+      }
+
+      .shape-bg {
+        width: 100%;
+        height: 100vh;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: radial-gradient(#000000 2px, transparent 2px),
+          radial-gradient(#000000 2px, transparent 2px);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+        z-index: -1;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 100%,
+          0% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+
+      .block-3 {
+        margin: 5px;
+        text-align: center;
+        padding-left: 75px;
+        padding-right: 75px;
+        background-image: radial-gradient(#000000 2px, transparent 2px),
+          radial-gradient(#000000 2px, transparent 2px);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+      }
+
+      .block-1 {
+        padding: 121px;
+        min-height: 861px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* lang-btn begin */
+      .lang-btn {
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px,
+          rgb(0 0 0 / 30%) 0px 7px 13px -3px,
+          rgb(0 0 0 / 20%) 0px -3px 0px inset;
+        margin: 10px;
+      }
+
+      /* lang-btn end */
+      .block-2 {
+        height: 500px;
+        max-width: 100%;
+        background-image: radial-gradient(#000000 2px, transparent 2px), radial-gradient(#000000 2px, transparent 2px);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+        clip-path: polygon(0 34%, 100% 0%, 100% 65%, 0% 100%);
+      }
+
+      .profile {
+        height: 575px;
+        width: 434px;
+        background-image: url(./profile-pic-removebg-preview.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        float: right;
+        border: #fff700;
+        box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+      }
+
+
+
+      /* box - animation begin */
+      .box-2 {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        background-color: #302322;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .box-2 h2 {
+        font-size: 9em;
+        color: white;
+        position: relative;
+        z-index: 10;
+      }
+
+      .box-2::before {
+        content: "";
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 1520px;
+        background-image: linear-gradient(rgb(255, 0, 0), rgb(214, 21, 21));
+        animation: anime;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+
+      .box-2::after {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        background-image: linear-gradient(45deg, #000000, red);
+        border-radius: 10px;
+      }
+
+      @keyframes anime {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* box animation end */
+
+
+
+      .hidden {
+        visibility: hidden;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #514a49;
+      }
+
+      /* project collapsable begin */
+      .project {
+        padding: 95px;
+        padding-top: 80px;
+        padding-bottom: 240px;
+        color: rgb(0, 0, 0);
+      }
+
+      .collapsible {
+        background: #1d1818;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        padding-right: 40px;
+        width: 100%;
+        height: 80px;
+        border: none;
+        border-radius: 5px;
+        text-align: left;
+        outline: none;
+        font-size: 17px;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+          rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+          rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        background-position: 0 0, 20px 20px;
+      }
+
+      .arrow-down {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #fff700;
+        border-left: 0;
+        border-top: 0;
+        float: right;
+
+        transform: rotate(45deg);
+      }
+
+      .active,
+      .collapsible:hover {
+        background-color: rgb(85, 85, 85);
+      }
+
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: black;
+        color: white;
+      }
+
+      .project-header {
+        margin: 30px;
+        color: rgb(255 239 61);
+        font-weight: 900;
+        font-size: 60px;
+        font-family: sans-serif;
+      }
+
+      /* project collapsable end */
+
+      /* gallary begin */
+
+      .image-grid {
+        padding: 80px;
+      }
+
+      .image-row {
+        display: flex;
+      }
+
+      .image-row .image {
+        margin: 12px;
+        height: 280px;
+      }
+
+      .image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+          0 6px 20px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.7);
+      }
+
+      .image-01 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-02 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-03 {
+        background-image: url("#");
+        flex: 2;
+      }
+
+      .image-04 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-05 {
+        background-image: url("#");
+        flex: 2;
+      }
+
+      .image-06 {
+        background-image: url("#");
+        flex: 2;
+      }
+
+      .image-07 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-08 {
+        background-image: url("#");
+        flex: 3;
+      }
+
+      .image-09 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-10 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-11 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      .image-12 {
+        background-image: url("#");
+        flex: 1;
+      }
+
+      @media screen and (max-width: 400px) {
+        .image-row {
+          flex-direction: column;
+        }
+
+        .image-row .image {
+          flex-basis: auto;
+        }
+      }
+      /* gallary end */
+
+      /* timeline begin */
+      .timer-section {
+  min-height: 100vh;
+}
+.timer-section .container-5 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.timer-section .timer-container-5 {
+  list-style: none;
+}
+.timer-section .timer {
+  list-style: none;
+  position: relative;
+  max-width: 1300px;
+  margin: auto;
+}
+.timer-section .timer::before {
+  /* content: ''; */
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: #F2F2F2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timer-section .timer .step {
+  width: 50%;
+  padding: 20px 15px;
+  position: relative;
+  background-color:#ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .04);
+}
+.timer-section .timer .step:not(:first-child),
+.timer-section .timer .step:not(:last-child) {
+    margin: 53px 0 0px 0;
+}
+.timer-section .timer .step:nth-child(odd) {
+  transform: translateX(100%);
+  border-left: 2px solid lightblue;
+  border-radius: 0 3px 3px 0;
+}
+.timer-section .timer .step:nth-child(even) {
+  border-right: 2px solid lightsalmon;
+  border-radius: 3px 0 0 3px;
+}
+
+.timer-section .timer .step > span {
+  position: absolute;
+  height: 26px;
+  width: 54px;
+  color: #333;
+  background-color: #F2F2F2;
+  text-align: center;
+  line-height: 22px;
+  border-radius: 3px;
+  font-size: .8rem;
+}
+.timer-section .timer .step:nth-child(odd) > span {
+  top: -40px;
+  left: -13px;
+  border: 2px solid lightblue;
+}
+.timer-section .timer .step:nth-child(even) > span {
+  top: -40px;
+  right: -13px;
+  border: 2px solid lightsalmon;
+}
+
+.timer-section .timer .step h3 {
+  margin-bottom: 15px;
+}
+.timer-section .timer .step p {
+  font-weight: 300;
+  font-size: .85rem;
+  color: #555;
+}
+
+@media screen and (max-width: 500px) {
+  .timer-section .timer .step {
+    width: 100%;
+    text-align: center;
+    transform: translateX(0%);
+    border-radius: 3px !important;
+  }
+  .timer-section .timer .step:nth-child(odd) {
+    transform: translateX(0%);
+    border: none;
+    border-top: 2px solid lightblue;
+  }
+  .timer-section .timer .step:nth-child(even) {
+    border: none;
+    border-top: 2px solid lightsalmon;
+  }
+  .timer-section .timer .step span {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+      /* timeline end */
+
+      /* flow chart begin */
+      .container-2 {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid #000;
+        margin: 5px;
+        display: inline;
+        background-color: #00000000;
+        border-radius: 5px;
+      }
+
+      .binary {
+        background-color: #ffffff;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .tree {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+
+      .tree ul {
+        padding-top: 20px;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .tree li {
+        display: inline-table;
+        text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 10px;
+        transition: 0.5s;
+      }
+
+      .tree li::before,
+      .tree li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 50%;
+        border-top: 1px solid #ccc;
+        width: 51%;
+        height: 10px;
+      }
+
+      .tree li::after {
+        right: auto;
+        left: 50%;
+        border-left: 1px solid #ccc;
+      }
+
+      .tree li:only-child::after,
+      .tree li:only-child::before {
+        display: none;
+      }
+
+      .tree li:only-child {
+        padding-top: 100px;
+      }
+
+      .tree li:first-child::before,
+      .tree li:last-child::after {
+        border: 0 none;
+      }
+
+      .tree li:last-child::before {
+        border-right: 1px solid #ccc;
+        border-radius: 0 5px 0 0;
+        -webkit-border-radius: 0 5px 0 0;
+        -moz-border-radius: 0 5px 0 0;
+      }
+
+      .tree li:first-child::after {
+        border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+      }
+
+      .tree ul ul::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid #ccc;
+        width: 0;
+        height: 20px;
+      }
+
+      .tree li a {
+        border: 1px solid #ccc;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        padding: 10px;
+        display: inline-grid;
+        border-radius: 5px;
+        background: #ffc1c1;
+        text-decoration-line: none;
+        border-radius: 5px;
+        transition: 0.5s;
+      }
+
+      .tree li a img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 100px;
+        margin: auto;
+      }
+
+      .tree li a span {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #666;
+        padding: 8px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+
+      /*Hover-Section*/
+      .tree li a:hover,
+      .tree li a:hover i,
+      .tree li a:hover span,
+      .tree li a:hover + ul li a {
+        background: #c8e4f8;
+        color: #000;
+        border: 1px solid #94a0b4;
+      }
+
+      .tree li a:hover + ul li::after,
+      .tree li a:hover + ul li::before,
+      .tree li a:hover + ul::before,
+      .tree li a:hover + ul ul::before {
+        border-color: #94a0b4;
+      }
+
+      /* flow chart end */
+
+      /* Column block begin */
+      .column-block{
+        padding: 100px; 
+        background: #efefef;
+        color: black;
+        background-image: radial-gradient(#d2d2d2 2px, transparent 2px), radial-gradient(#b0b0b0 2px, transparent 2px);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+      }
+
+      #proj-name{
+        box-shadow: rgb(0 0 0) 0px 0px 2px 0px, rgb(0 0 0) 0px 1px 0px 1px;
+        padding: 20px;
+        backdrop-filter: blur(7px);
+      }
+
+      #proj-para{
+        column-count: 3;
+        font-style: italic;
+        font-size: medium;
+        box-shadow: rgb(0 0 0) 0px 0px 2px 0px, rgb(0 0 0) 0px 1px 0px 1px;
+        padding: 20px;
+        backdrop-filter: blur(7px);
+      }
+
+      /* Background video on text begin */
+      /* Container should be full height and full width */
+
+      .text {
+        display: grid;
+        place-items: center;
+        background-color: #000000;
+        color: #fff;
+        font-weight: 900;
+        font-size: 100px;
+        margin: 0%;
+        font-family: sans-serif;
+        /* Mix Blend Mode does the all magic */
+        mix-blend-mode: multiply;
+        user-select: none;
+        background-image: radial-gradient(#ffffff 2px, transparent 2px), radial-gradient(#ffffff 2px, transparent 2px);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 32%;
+        padding: 10px;
+        height: 300px;
+        /* Should be removed. Only for demonstration */
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* box - animation begin */
+      .box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+
+      .box h2 {
+        font-size: 9em;
+        color: white;
+        position: relative;
+        z-index: 10;
+      }
+
+      .box::before {
+        content: "";
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 620px;
+        background-image: linear-gradient(rgb(255, 0, 0), rgb(214, 21, 21));
+        animation: anime;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+
+      .box::after {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        background-image: linear-gradient(45deg, #000000, #3c3b3b);
+        border-radius: 10px;
+      }
+
+      @keyframes anime {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* box animation end */
+
+      /* background begin */
+      .block-bg {
+        width: 100%;
+        margin: auto;
+        z-index: -1;
+        position: absolute;
+      }
+      .container-bg {
+        width: 100%;
+        height: 100vh;
+        padding-left: 70px;
+      }
+
+      .a {
+        width: 300px;
+        height: 433px;
+        background-color: red;
+        -ms-transform: skewX(20deg);
+        transform: skewX(70deg);
+      }
+      .b {
+        width: 300px;
+        height: 433px;
+        background-color: red;
+        -ms-transform: skewX(20deg);
+        transform: skewX(110deg);
+      }
+
+      /* background end */
+
+      /* card-row */
+      .card-row {
+        display: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+
+      .card-one {
+        display: relative;
+        height: 420px;
+        width: 270px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+      .card-two {
+        display: relative;
+        height: 220px;
+        width: 220px;
+        border: 1px solid grey;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+
+      
+
+      /* qr begin */
+      .qr-ftr {
+        color: #f4d203;
+        font-size: 20px;
+        padding: 215px 12px;
+        position: absolute;
+        text-align: center;
+      }
+      /* qr end */
+
+      /* reveal card begin */
+      .project-container {
+        display: flex;
+        gap: 20px;
+        padding: 121px;
+        min-height: 861px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        align-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: rgb(0, 0, 0);
+        font-weight: 900;
+        font-size: 60px;
+        font-family: sans-serif;
+      }
+
+      .project-card {
+        width: 45%;
+        display: inline-table;
+        height: 325px;
+        color: rgb(25, 25, 25);
+        border: dotted rgb(16, 16, 16);
+      }
+
+      .project-card:hover {
+        background: linear-gradient(0deg, #292929 0%, #000000 100%);
+        border: black;
+        color: white;
+        border-radius: 2px;
+      }
+
+      /* reveal card end */
+
+      /* hex begin */
+      .hex-block {
+        height: 100vh;
+        margin: 5px;
+        text-align: center;
+      }
+
+      .honeycomb {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        transform: translateY(80px);
+      }
+
+      .honeycomb-cell {
+        -webkit-box-flex: 0;
+        flex: 0 1 250px;
+        max-width: 250px;
+        height: 137.5px;
+        margin: 65.4px 12.5px 25px;
+        position: relative;
+        padding: 0.5em;
+        text-align: center;
+        z-index: 1;
+      }
+      .honeycomb-cell_img {
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+      }
+      .honeycomb-cell_title {
+        height: 100%;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        word-break: break-word;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        font-size: 1.75em;
+        transition: opacity 350ms;
+      }
+      .honeycomb-cell_title > small {
+        font-weight: 300;
+        margin-top: 0.25em;
+      }
+      .honeycomb-cell::before,
+      .honeycomb-cell::after {
+        content: "";
+      }
+      .honeycomb-cell::before,
+      .honeycomb-cell::after,
+      .honeycomb-cell_img {
+        top: -50%;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        display: block;
+        position: absolute;
+        -webkit-clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        z-index: -1;
+      }
+      .honeycomb-cell::after {
+        background: #111111;
+        opacity: 0.7;
+        transition: opacity 350ms;
+        -webkit-transition: opacity 350ms;
+      }
+      .honeycomb-cell:hover .honeycomb-cell_title {
+        opacity: 0;
+      }
+      .honeycomb-cell:hover .honeycomb-cell_img {
+        filter: grayscale(0%);
+      }
+      .honeycomb-cell:hover::before {
+        background: #2c2a2a;
+      }
+      .honeycomb-cell:hover::after {
+        opacity: 0;
+      }
+      .honeycomb_Hidden {
+        display: none;
+        opacity: 0;
+        width: 250px;
+        margin: 0 12.5px;
+      }
+
+      /****** Responsive *******/
+
+      @media (max-width: 550px) {
+        .honeycomb-cell {
+          margin: 81.25px 25px;
+        }
+      }
+
+      @media (min-width: 550px) and (max-width: 825px) {
+        .honeycomb-cell:nth-child(3n) {
+          margin-right: calc(50% - 125px);
+          margin-left: calc(50% - 125px);
+        }
+
+        .honeycomb_Hidden:nth-child(3n + 5) {
+          display: block;
+        }
+      }
+
+      @media (min-width: 825px) and (max-width: 1100px) {
+        .honeycomb-cell:nth-child(5n + 4) {
+          margin-left: calc(50% - 275px);
+        }
+
+        .honeycomb-cell:nth-child(5n + 5) {
+          margin-right: calc(50% - 275px);
+        }
+
+        .honeycomb_Hidden:nth-child(5n),
+        .honeycomb_Hidden:nth-child(5n + 3) {
+          display: block;
+        }
+      }
+      @media (min-width: 1100px) {
+        .honeycomb-cell:nth-child(7n + 5) {
+          margin-left: calc(50% - 400px);
+        }
+
+        .honeycomb-cell:nth-child(7n + 7),
+        .honeycomb-cell:nth-child(7n + 5):nth-last-child(2) {
+          margin-right: calc(50% - 400px);
+        }
+
+        .honeycomb_Hidden:nth-child(7n + 7),
+        .honeycomb_Hidden:nth-child(7n + 9),
+        .honeycomb_Hidden:nth-child(7n + 11) {
+          display: block;
+        }
+      }
+
+      /* hex end */
+
+
+      /* footer begin */
+      footer {
+        height: 80vh;
+        width: 100%;
+        clip-path: polygon(0% 15.3%, 100% 24.3%, 100% 100%, 0% 100%);
+        background: black;
+      }
+      /* footer end */
+
+      /* phone begin */
+      .phone-ui{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        gap: 35px;
+      }
+      .phone{
+            width: 339px;
+            height: 706px;
+            border: 8px solid;
+            border-radius: 58px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .camera{
+            width: 155px;
+            height: 23px;
+            background: black;
+            position: relative;
+            border-bottom-left-radius: 36px;
+            border: 5px solid;
+            border-bottom-right-radius: 28px;
+            border-bottom-left-radius: 24px;
+        }
+
+        .phone:hover{
+            background-image: url(./1.jpeg);
+        }
+
+        /* UX begin */
+        .ui{
+          background-color: #ffffff;
+          background-image: linear-gradient(#00000054 1px, #ffffff 1px), linear-gradient(to right, #00000054 1px, #ffffff 1px);
+          background-size: 20px 30px;
+        }
+        /* UX end */
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="nav-header">
+        <div class="nav-title"></div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="https://github.com/Satishh4" target="_blank">Github</a>
+        <a href="https://stackoverflow.com/users/20380289/satishh7177" target="_blank">Stackoverflow</a>
+        <a href="https://linkedin.com/in/satishh-kumar" target="_blank">LinkedIn</a>
+        <a href="https://codepen.io/Satishh" target="_blank">Codepen</a>
+        <a href="./Satish-B.engg.pdf" target="_blank">Codepen</a>
+      </div>
+    </div>
+
+    <div class="sticky">
+      <a style="color: #000; font-family: monospace" href="mailto:sathishkumars.20cs@saividya.ac.in?subject=Mail from our Website">satishkumar@gmail.com ---</a>
+    </div>
+    <!-- background -->
+    <div class="block-bg">
+      <div class="container-bg">
+        <div class="a"></div>
+        <div class="b"></div>
+      </div>
+    </div>
+    <!-- background -->
+
+    <div id="intro">
+      <p class="txt-big">SATISH KUMAR</p>
+
+      <p class="txt-medium"><b>Engineer</b></p>
+      <h1 style="padding-left: 75px">DESIGN * DEVELOP * DEPLOY</h1>
+      <p class="test2">vertical-rl.</p>
+    </div>
+
+    <div class="shape-1">
+      <div class="shape-bg">
+        <!-- cube-1 -->
+        <div class="spinner-1">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <!-- cube-1 end -->
+      </div>
+    </div>
+
+    
+
+    <!-- About section begin -->
+
+    <div style="padding: 121px; min-height: 100vh">
+      <div class="profile"></div>
+      <p style="font-size: 6em; margin: 30px; color: black">About Me.</p>
+
+      <p id="txt-small" style="max-width: 1086px; font-size: 20px;">
+        Hard Working College Student seeking employment.. Knowledgeable in user interface, testing, and debugging processes.
+Proficient in an assortment of technologies, including HTML , CSS , JavaScript , C#, .NET , Java , Figma. Able to
+effectively self-manage during independent projects, as well as collaborate in a team setting.
+      </p>
+      <hr size="2" width="40%" color="red" />
+
+      <!-- resume button -->
+      <div style="padding-left: 30px;">
+      <button class="file-btn">RESUME</button>
+      <a class="file-btn" href="./Satish-B.engg.pdf">RESUME</a>
+      </div>
+      <!-- end resume btn -->
+
+      <hr size="2" width="100%" color="black" />
+    </div>
+
+    <!-- About section end -->
+
+    <!-- button section lang -->
+    <div class="block-3">
+      <button class="lang-btn">
+        <img src="./Javascript_Logo.png" alt="Javascript" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./jquery.png" alt="jquery" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./java.jpg" alt="java" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./c.png" alt="c" height="70px" width="60px">
+      </button>
+      <button class="lang-btn">
+        <img src="./android-std.png" alt="android-std" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./nodejs.png" alt="nodejs" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./py-.png" alt="py" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./css.png" alt="css" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./react.png" alt="React" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./html.png" alt="html" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./figma.png" alt="figma" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./dotnet.png" alt="dotnet" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./visual.jpeg" alt="visual" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./github.png" alt="github" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./bootstrap.png" alt="bootstrap" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./codepenLogo.png" alt="codepen" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./vs.jpg" alt="vs" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./dribble.png" alt="dribble" height="70px" width="70px">
+      </button>
+      <button class="lang-btn">
+        <img src="./firebase.jpg" alt="firebase" height="70px" width="70px">
+      </button>
+    </div>
+    <!-- button section end -->
+
+    <!-- honey-comb begin -->
+    <div class="hex-block">
+      <ul class="honeycomb">
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="img/work-1.jpg" />
+          <div class="honeycomb-cell_title">Web Development</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="./react.png" />
+          <div class="honeycomb-cell_title">CSS Animation</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="./android-std.png" />
+          <div class="honeycomb-cell_title">Android applications</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="./NET.jpg"/>
+          <div class="honeycomb-cell_title">.NET</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="img/work5.jpg" />
+          <div class="honeycomb-cell_title">AI/ML</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="img/UI.jpg" />
+          <div class="honeycomb-cell_title">UI/UX</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="img/work06.jpg" />
+          <div class="honeycomb-cell_title">Animation</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="img/work06.jpg" />
+          <div class="honeycomb-cell_title">Java Full Stack Development</div>
+        </li>
+        <li class="honeycomb-cell">
+          <img class="honeycomb-cell_img" src="img/work07.jpg" />
+          <div class="honeycomb-cell_title">Video Editing</div>
+        </li>
+        <li class="honeycomb-cell honeycomb_Hidden"></li>
+      </ul>
+
+      <div class="sticky-2">Familier---</div>
+    </div>
+    <!-- honey-comb end -->
+
+    <!-- timeline begin -->
+    <section class="timer-section">
+      <div class="container-5">
+        <div class="timer-container-5">
+          <ul class="timer">
+            <li class="step">
+              <span>2015</span>
+              <div class="content-1">
+                <h2>SVN ENGLISH HIGH SCHOOL</h2>
+                <hr>
+                <button>School</button>
+                <p>
+                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                </p>
+              </div>
+            </li>
+          <li class="step">
+            <span>2018</span>
+            <div class="content-1">
+              <h2>INDIAN ACADEMY PU COLLEGE</h2>
+              <hr>
+              <button>B.Engg in CSE</button>
+                <p>
+                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                </p>
+            </div>
+          </li>
+          <li class="step">
+            <span>2020</span>
+            <div class="content-1">
+              <h2>BSF INSTITUTE OF TECHNOLOGY</h2>
+              <hr>
+              <button>B.Engg in CSE</button>
+                <p>
+                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                </p>
+            </div>
+          </li>
+          <li class="step">
+            <span>2020</span>
+            <div class="content-1">
+              <h2>INFIDATA SOLUTION <button>Intern</button></h2>
+              <hr>
+                <p>
+                  ● Worked on a "Disaster Management app" using ANDROID Studio and Figma. <br>
+                  ● Oversaw all aspects of design and development, and add features of Auto upload of images and
+                    auto dialing on Emergency Number. <br>
+                  ● Implemented and updated application modules under the direction of Senior Software
+                    Developers <br>
+                  <br>
+                  <button>Android Studio</button> <button>Figma</button> <button>Java</button>
+                </p>
+            </div>
+          </li>
+          <li class="step">
+            <span>2020</span>
+            <div class="content-1">
+              <h2>SAI VIDYA INSTITUTE OF TECHNOLOGY</h2>
+              <hr>
+              <button>B.Engg in CSE</button>
+                <p>
+                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                </p>
+            </div>
+          </li>
+          <li class="step">
+            <span>2022</span>
+            <div class="content-1">
+              <h2>Redtron Inc <button>Intern</button></h2>
+              <hr>
+                <p>
+                  ● Worked on an E-commerce Website by designing the Front-End based on the requirement and
+                  guidance of Senior Developer.<br>
+                  ● Developed User Interface with HTML , CSS , JavaScript and Figma.<br>
+                  ● Helped to achieve a consistent look and visual theme across the website by promoting uniform
+                  fonts, formatting, images, and layout. <br>
+                  ● Worked to assess competing websites in regards to content, look, and feel. <br>
+
+                </p>
+                <button>HTML</button> <button>CSS</button> <button>jQuery</button> <button>JavaScript</button> <button>Figma</button>
+            </div>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- timeline end -->
+    <!-- flowchart begin -->
+    <div class="container-2">
+      <div class="row binary">
+        <div class="tree">
+          <ul>
+            <li>
+              <a href="#"><img src="images/1.jpg" /><span>Satishh</span></a>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><img src="images/2.jpg" /><span>Full Stack Developer</span></a>
+                  <ul>
+                    <li>
+                      <a href="#"><img src="images/3.jpg" /><span>Python</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/4.jpg" /><span>Java</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/4.jpg" /><span>C</span></a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><img src="images/5.jpg" /><span>Web Development</span></a>
+                  <ul>
+                    <li>
+                      <a href="#"><img src="images/6.jpg" /><span>Front End</span></a>
+                      <ul>
+                        <li>
+                          <a href="#"><img src="images/7.jpg" /><span>React</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><img src="images/8.jpg" /><span>Javascript</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><img src="images/7.jpg" /><span>CSS</span></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/7.jpg" /><span>Back End</span></a>
+                      <ul>
+                        <li>
+                          <a href="#"><img src="images/7.jpg" /><span>React</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><img src="images/8.jpg" /><span>Nodejs</span></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/8.jpg" /><span>UI</span></a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><img src="images/9.jpg" /><span>Frameworks</span></a>
+                  <ul>
+                    <li>
+                      <a href="#"><img src="images/7.jpg" /><span>jQuery</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/8.jpg" /><span>Django</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="./NET.jpg" /><span>.NET</span></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/8.jpg" /><span>Bootstrap</span></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="sticky-2">Binary Tree---</div>
+      </div>
+    </div>
+    <!-- flowchart end -->
+
+
+    <!-- Collapsable project display begin -->
+    <div class="project">
+      <h2>Collapsibles</h2>
+
+      <p>College Project:</p>
+      <button type="button" class="collapsible">
+        Final Year Project
+        <div class="arrow-down"></div>
+      </button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <div style="min-height: 500px">
+          <div class="profile"></div>
+          <p class="project-header">Virtual Assistant for visually impaired.</p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 18px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Vitae eaque praesentium illo amet
+            illum laboriosam corrupti ad. Aliquam explicabo odit tempore aliquid
+            reiciendis voluptas repellat deleniti omnis! Aliquid, perferendis
+            quidem!
+          </p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 18px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum
+          </p>
+          <!-- project file btn -->
+          <div style="padding-left: 30px;">
+            <button class="file-btn">Report</button>
+            </div>
+          <!-- project file btn end -->
+
+          <img
+            src="./redtron.png"
+            alt="Flowers in Chania"
+            width="170"
+            height="60"
+            style="float: right; background: white"
+          />
+        </div>
+      </div>
+
+      <p>Internship Project:</p>
+      <button type="button" class="collapsible">
+        UI/UX Frontend Development
+        <div class="arrow-down"></div>
+      </button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <div style="min-height: 500px">
+          <div class="profile"></div>
+          <p class="project-header">UI/UX Front-End Development</p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 18px; ">
+            Worked on an E-commerce Website by designing the Front-End based on the requirement and
+            guidance of Senior Developer. <br>
+            ● Developed User Interface with HTML , CSS , JavaScript and Figma. <br>
+            ● Helped to achieve a consistent look and visual theme across the website by promoting uniform <br>
+            fonts, formatting, images, and layout. <br>
+            ● Worked to assess competing websites in regards to content, look, and feel. <br>
+            [HTML , CSS , JavaScript , Figma ,jQuery] <br>
+            
+          </p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 18px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum
+          </p>
+          <!-- project file btn -->
+          <div style="padding-left: 30px;">
+            <button class="file-btn">RESUME</button>
+            </div>
+          <!-- project file btn end -->
+
+          <img
+            src="./redtron.png"
+            alt="Flowers in Chania"
+            width="170"
+            height="60"
+            style="float: right; background: white"
+          />
+        </div>
+      </div>
+      <button type="button" class="collapsible">
+        ANDROID Developer
+        <div class="arrow-down"></div>
+      </button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+
+        <div style="min-height: 500px">
+          <div class="profile"></div>
+          <p class="project-header">Virtual Assistant for visually impaired.</p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 18px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Vitae eaque praesentium illo amet
+            illum laboriosam corrupti ad. Aliquam explicabo odit tempore aliquid
+            reiciendis voluptas repellat deleniti omnis! Aliquid, perferendis
+            quidem!
+          </p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 18px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum
+          </p>
+          <!-- project file btn -->
+          <div style="padding-left: 30px;">
+            <button class="file-btn">RESUME</button>
+            </div>
+          <!-- project file btn end -->
+
+          <img
+            src="./redtron.png"
+            alt="Flowers in Chania"
+            width="170"
+            height="60"
+            style="float: right; background: white"
+          />
+        </div>
+
+
+      </div>
+      <button type="button" class="collapsible">
+        Human Resource
+        <div class="arrow-down"></div>
+      </button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+
+        <div style="min-height: 500px">
+          <div class="profile"></div>
+          <p class="project-header">Virtual Assistant for visually impaired.</p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Vitae eaque praesentium illo amet
+            illum laboriosam corrupti ad. Aliquam explicabo odit tempore aliquid
+            reiciendis voluptas repellat deleniti omnis! Aliquid, perferendis
+            quidem!
+          </p>
+          <p id="txt-small" style="max-width: 880px; font-weight: lighter; font-size: 20px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit itaque deleniti dicta! Assumenda et porro harum alias eaque
+            quisquam rerum distinctio. Inventore commodi magnam, ducimus iure
+            non doloremque nam. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Sint nobis quisquam eligendi illo facere.
+            Corporis, mollitia est! Quia consequuntur minus soluta omnis minima,
+            quae sint quam velit ut sapiente ratione. Lorem ipsum
+          </p>
+          <!-- project file btn -->
+          <div style="padding-left: 30px;">
+            <button class="file-btn">RESUME</button>
+            </div>
+          <!-- project file btn end -->
+
+          <img
+            src="./redtron.png"
+            alt="Flowers in Chania"
+            width="170"
+            height="60"
+            style="float: right; background: white"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Collapsable project display end -->
+
+      <!-- 3 column text begin -->
+      <div class="column-block">
+        <h3 id="proj-name"
+        >
+          Virtual Assistant using AI/ML
+        </h3>
+        <p id="proj-para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          odit, obcaecati eius deleniti corporis molestias rem commodi, aperiam
+          nihil itaque ea sint doloremque tempore aspernatur alias eligendi fugit?
+          Dolore, nihil! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Facilis, corporis quos dolores, quas animi deleniti excepturi officiis
+          doloremque similique, expedita eaque inventore est quod labore fuga
+          repellendus? Mollitia, quidem neque! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Dolorum dolorem minima molestiae ipsum,
+          perferendis sint obcaecati. Ex eaque quia modi inventore optio, quisquam
+          voluptatem, culpa cupiditate necessitatibus, enim quaerat a! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Sequi, magnam aliquam alias
+          ducimus, blanditiis enim quod delectus ut odio excepturi vero quidem
+          debitis voluptates natus. Eos soluta sed eligendi harum. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Commodi dolore, quam unde
+          sunt nihil eaque alias delectus ipsum consequatur quasi eligendi, cumque
+          veniam minus pariatur perspiciatis nam. Officia, nostrum doloribus!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+          aspernatur accusamus iste voluptatem laborum placeat ratione suscipit
+          quos, dolorum sapiente harum qui eveniet, dolorem quidem repudiandae
+          praesentium ducimus possimus assumenda? Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Iure, iste veniam. Mollitia eveniet neque
+          distinctio? Ex laborum iure expedita consectetur officia, qui sunt, et,
+          vel blanditiis maxime quas illum eius! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Consectetur odit, obcaecati eius deleniti
+          corporis molestias rem commodi, aperiam nihil itaque ea sint doloremque
+          tempore aspernatur alias eligendi fugit? Dolore, nihil! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Facilis, corporis quos
+          dolores, quas animi deleniti excepturi officiis doloremque similique,
+          expedita eaque inventore est quod labore fuga repellendus? Mollitia,
+          quidem neque! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Dolorum dolorem minima molestiae ipsum, perferendis sint obcaecati. Ex
+          eaque quia modi inventore optio, quisquam voluptatem, culpa cupiditate
+          necessitatibus, enim quaerat a! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Sequi, magnam aliquam alias ducimus, blanditiis enim
+          quod delectus ut odio excepturi vero quidem debitis voluptates natus.
+          Eos soluta sed eligendi harum. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Commodi dolore, quam unde sunt nihil eaque alias
+          delectus ipsum consequatur quasi eligendi, cumque veniam minus pariatur
+          perspiciatis nam. Officia, nostrum doloribus! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Veniam aspernatur accusamus iste
+          voluptatem laborum placeat ratione suscipit quos, dolorum sapiente harum
+          qui eveniet, dolorem quidem repudiandae praesentium ducimus possimus
+          assumenda? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Iure, iste veniam. Mollitia eveniet neque distinctio? Ex laborum iure
+          expedita consectetur officia, qui sunt, et, vel blanditiis maxime quas
+          illum eius!
+        </p>
+      </div>
+      <!-- 3 column text end -->
+
+
+      <!-- education begin -->
+    <div class="block-1">
+      
+    </div>
+    <!-- education end -->
+
+    <!-- card border end -->
+
+    <!-- four card reveal begin -->
+    <div class="project-container">
+      <div class="project-card">Web Design</div>
+      <div class="project-card">Product Development</div>
+      <div class="project-card">UI/UX Design</div>
+      <div class="project-card">Software Development</div>
+    </div>
+    <!-- four card reveal end -->
+
+    <div class="block-2"></div>
+
+    <div class="card-row">
+      <div class="card-one box">
+        <h2>02</h2>
+      </div>
+      <div class="card-one box">
+        <h2>02</h2>
+      </div>
+      <div class="card-one box">
+        <h2>02</h2>
+      </div>
+      <div class="card-one box">
+        <h2>02</h2>
+      </div>
+      <div class="card-one box">
+        <h2>02</h2>
+      </div>
+    </div>
+
+    <!-- card container -->
+
+
+
+    <!-- gallary begun -->
+    <div class="image-grid">
+      <div class="image-row">
+        <div class="image image-01"></div>
+        <div class="image image-02"></div>
+        <div class="image image-03"></div>
+      </div>
+      <div class="image-row">
+        <div class="image image-06"></div>
+        <div class="image image-07"></div>
+        <div class="image image-08"></div>
+        <div class="image image-09"></div>
+      </div>
+      <div class="image-row">
+        <div class="image image-10"></div>
+        <div class="image image-11"></div>
+        <div class="image image-12"></div>
+      </div>
+    </div>
+    <!-- gallary end -->
+
+    <!-- quote begin -->
+    <p class="text">Contact Me</p>
+    <!-- quote end -->
+
+    <div class="ui">
+
+    <!-- phone UI begin -->  
+    <div class="phone-ui">
+
+      <div class="phone">
+        <div class="camera"></div>
+    </div>
+    <div class="phone">
+        <div class="camera"></div>
+    </div>
+    <div class="phone">
+        <div class="camera"></div>
+    </div>
+
+    </div>
+
+    <!-- phone UI end -->
+
+    <div class="card-row" style="padding-top: 114px">
+      <div class="card-two"></div>
+      <div class="card-two"></div>
+      <div class="card-two"></div>
+      <div class="card-two"></div>
+    </div>
+
+    <div class="card-row">
+      <div class="card-two" style="height: 270px">
+        <h2 class="qr-ftr">LinkedIn</h2>
+        <img src="./Linkedin-QR.svg" alt="qr" width="218" height="218" />
+      </div>
+
+      <div class="card-two" style="height: 270px">
+        <h2 class="qr-ftr">GMAIL</h2>
+        <img src="./gmail-qr.svg" alt="qr" width="218" height="218" />
+      </div>
+
+      <div class="card-two" style="height: 270px">
+        <h2 class="qr-ftr">RESUME</h2>
+        <img src="./RESUME-QR.svg" alt="qr" width="218" height="218" />
+      </div>
+
+      <div class="card-two" style="height: 270px">
+        <h2 class="qr-ftr">WHATSAPP</h2>
+        <img src="./whatsapp-qr.svg" alt="qr" width="218" height="218" />
+      </div>
+    </div>
+
+    <!-- Contact begin -->
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19696.38564164818!2d77.61598068629007!3d13.058224205662123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19e179b194b5%3A0x6bb5ac64fb789a1c!2sThanisandra%2C%20Bengaluru%2C%20Karnataka!5e1!3m2!1sen!2sin!4v1671266085603!5m2!1sen!2sin"
+      width="700"
+      height="600"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+    <!-- Contact end -->
+
+    <!-- footer begin -->
+    <footer></footer>
+    <!-- footer end -->
+
+    <!-- footer-2 begin -->
+    <div class="footer-2" style="display: flex;justify-content: center; align-items: center; height: 50px; width: 100%;">
+    <h1>Made with {} using React</h1>
+    </div>
+    <!-- footer-2 end -->
+  </div>
+
+    <script>
+      // Collapsable begin
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+      // Collapsable end
+      </script>
+  </body>
+</html>
